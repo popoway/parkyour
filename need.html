@@ -1,30 +1,110 @@
 <!DOCTYPE html>
 <html>
-<head lang="en">
-  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-  <meta http-equiv="x-ua-compatible" content="IE=edge">
+  <head lang="en">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="x-ua-compatible" content="IE=edge">
 
-  <!-- Responsive settings -->
-  <meta name="viewport" content="initial-scale=1, minimum-scale=1, maximum-scale=1, width=device-width, user-scalable=no">
+    <!-- Responsive settings -->
+    <meta name="viewport" content="initial-scale=1, minimum-scale=1, maximum-scale=1, width=device-width, user-scalable=no">
 
-  <title>Parkyour</title>
+    <title>Parkyour</title>
 
-  <!-- Load materializecss -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/css/materialize.min.css">
+    <!-- Load materializecss -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/css/materialize.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="src/css/main.css" rel="stylesheet">
 
-  <!-- Load fav and touch icons -->
-  <link rel="shortcut icon" href="assets/faviconpng">
+    <!-- Load fav and touch icons -->
+    <link rel="shortcut icon" href="assets/favicon.png">
 
-  <!-- iOS integration -->
-  <meta name="apple-mobile-web-app-capable" content="yes">
-  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-  <meta name="apple-mobile-web-app-title" content="Parkyour">
-  <meta name="format-detection" content="telephone=no">
-  <link rel="apple-touch-icon" sizes="192x192" href="assets/touchicon.png">
+    <!-- iOS integration -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="Parkyour">
+    <meta name="format-detection" content="telephone=no">
+    <link rel="apple-touch-icon" sizes="192x192" href="assets/touchicon.png">
 
-</head>
+  </head>
 
-<body>
+  <body>
+    <!-- navbar -->
+    <div class="navbar-fixed">
+      <nav>
+        <div class="nav-wrapper">
+          <a href="#!" class="brand-logo"><img src="assets/favicon.png" height="42" width="42">Parkyour</a>
+          <ul id="nav-mobile" class="right hide-on-med-and-down">
+            <li><a href="#">Need</a></li>
+            <li><a href="#">Provide</a></li>
+            <li><a href="#">Support</a></li>
+          </ul>
+        </div>
+      </nav>
+    </div>
+    <!-- context: provide and need -->
+    <div class="row">
+      <div class="col l6  center-align">
+        <h1>
+          <i class="material-icons large">person</i></br>Need
+        </h1>
+      </div>
+      <div class="col l6 center-align">
+        <h1>
+          <i class="material-icons large">person</i></br>Provide
+        </h1>
+      </div>
+    </div>
 
-</body>
+    <div class="col s12 m12 l6">
+     <div class="card">
+      <div class="card-image waves-effect waves-block waves-light">
+        <img class="activator" src="/assets/sc.jpg">
+      </div>
+    </div>
+   </div>
+
+    <!-- footer -->
+    <footer class="page-footer">
+      <div class="container">
+        <div class="row">
+          <div class="col l6 s12">
+            <h5 class="white-text">Footer Content</h5>
+            <p class="grey-text text-lighten-4">You can use rows and columns here to organize your footer content.</p>
+          </div>
+          <div class="col l4 offset-l2 s12">
+            <h5 class="white-text">Links</h5>
+            <ul>
+              <li><a class="grey-text text-lighten-3" href="#!">Link 1</a></li>
+              <li><a class="grey-text text-lighten-3" href="#!">Link 2</a></li>
+              <li><a class="grey-text text-lighten-3" href="#!">Link 3</a></li>
+              <li><a class="grey-text text-lighten-3" href="#!">Link 4</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="footer-copyright">
+        <div class="container">
+        © 2018 Copyright Text
+        <a class="grey-text text-lighten-4 right" href="https://github.com/popoway/parkyour">GitHub</a>
+        </div>
+      </div>
+    </footer>
+
+    <!-- float button -->
+    <div class="fixed-action-btn">
+      <a class="btn-floating btn-large red">
+        <i class="large material-icons">help</i>
+      </a>
+      <ul>
+        <li><a class="btn-floating red"><i class="material-icons">insert_chart</i></a></li>
+        <li><a class="btn-floating yellow darken-1"><i class="material-icons">format_quote</i></a></li>
+        <li><a class="btn-floating green"><i class="material-icons">publish</i></a></li>
+        <li><a class="btn-floating blue"><i class="material-icons">attach_file</i></a></li>
+      </ul>
+    </div>
+
+  </body>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
+  <script src="src/js/main.js"></script>
+
 </html>
