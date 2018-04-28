@@ -46,13 +46,32 @@
 
       <!-- list of candidates -->
       <div class="col s12 m12 l4">
+        <form action="#">
+
+          <p><div class="switch">
+            <span style="color: #9e9e9e;">Show nearby requests only</span>
+            <label class="right">
+              <input type="checkbox"><span class="lever"></span>
+            </label>
+          </div></p>
+          <p><div class="switch">
+            <span style="color: #9e9e9e;">Show recent requests only</span>
+            <label class="right">
+              <input type="checkbox"><span class="lever"></span>
+            </label>
+          </div></p>
+          <p class="range-field">
+            <span style="color: #9e9e9e;">Number of People</span>
+            <input type="range" id="number_of_people" value="3" min="0" max="20" />
+          </p>
+        </form>
         <ul class="collection">
           <li class="collection-item avatar">
             <i class="material-icons circle">spa</i>
             <!-- <img src="images/yuna.jpg" alt="" class="circle"> -->
             <span class="title">Need a basketball place</span>
-            <p>date and time<br>
-               address
+            <p>Sun Apr 28, 11:30am<br>
+               Con Edison Field
             </p>
             <a href="#!" class="secondary-content"><i class="material-icons">grade</i></a>
           </li>
@@ -82,23 +101,55 @@
           </li>
         </ul>
       </div>
-      <a href="#">Dismiss</a>
-      <a href="#">Report abuse</a>
 
       <!-- more details, map and confirm button -->
       <div class="col s12 m12 l8">
         <div class="card blue-grey darken-1">
           <div class="card-content white-text">
-            <span class="card-title">Need a basketball place  <a class="btn-floating btn-large waves-effect waves-light red"><i class="material-icons">add</i></a>
-</span>
-            <p>I am a very simple card. I am good at containing small bits of information.
-            I am convenient because I require little markup to use effectively.</p>
+            <span class="card-title">Need a basketball place</span>
+            <table>
+              <tbody>
+                <tr>
+                  <td>Name of Place:</td>
+                  <td>Con Edison Field</td>
+                </tr>
+                <tr>
+                  <td>Type:</td>
+                  <td>Athletic Field</td>
+                </tr>
+                <tr>
+                  <td>Date:</td>
+                  <td>Sunday, April 28, 2018 @ 11:30am</td>
+                </tr>
+                <tr>
+                  <td>Address:</td>
+                  <td>276 Avenue C, New York, NY 10009</td>
+                </tr>
+                <tr>
+                  <td>Description:</td>
+                  <td>Just get a dry and clean seat there and kick everyone else out :33</td>
+                </tr>
+                <tr>
+                  <td>Number of People:</td>
+                  <td>3</td>
+                </tr>
+                <tr>
+                  <td>Extra requirements:</td>
+                  <td>I wanna some lollipops when I'm there.</td>
+                </tr>
+              </tbody>
+            </table>
             </br>
-            <i class="large material-icons">insert_chart</i><p>i am a map placeholder</p>
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d12092.106246859063!2d-73.9773125!3d40.739441049999996!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c2597186dad601%3A0xa72480513cd1b889!2sCon+Edison+Field!5e0!3m2!1sen!2sus!4v1524938327647" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
           </div>
           <div class="card-action">
             <a href="#">Sounds great, I'll do it!<i class="material-icons right">send</i></a>
           </div>
+          <div class="card-action">
+            <a href="#">Dismiss</a>
+            <a href="#">Report abuse</a>
+          </div>
+
         </div>
       </div>
 
