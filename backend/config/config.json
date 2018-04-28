@@ -1,0 +1,23 @@
+{
+  "development": {
+    "username": "cuny",
+    "password": "hackathon",
+    "database": "cunyhackathon",
+    "host": "127.0.0.1",
+    "dialect": "postgresql"
+  },
+  "test": {
+    "username": "cuny",
+    "password": "hackathon",
+    "database": "cunyhackathon",
+    "host": "127.0.0.1",
+    "dialect": "postgresql"
+  },
+  "production": {
+    "username": "cuny",
+    "password": "hackathon",
+    "database": "cunyhackathon",
+    "host": "127.0.0.1",
+    "dialect": "postgresql"
+  }
+}
