@@ -1,3 +1,3 @@
 document.addEventListener("DOMContentLoaded", function(e) {
-  EVT.publish([], "init");
+  PubSub.publish([], "init");
 });
