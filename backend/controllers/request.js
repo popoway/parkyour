@@ -11,7 +11,11 @@ const RequestController = {
   },
 
   getRequests(req, res) {
-    models.Request.findAll()
+    models.Request.findAll({
+      where: {
+        fulfilled: false
+      }
+    })
       .then(allRequests => {
         res.json(allRequests);
       })
