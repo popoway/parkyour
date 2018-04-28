@@ -24,6 +24,13 @@
     <meta name="format-detection" content="telephone=no">
     <link rel="apple-touch-icon" sizes="192x192" href="assets/touchicon.png">
 
+    <style>
+      #map {
+        height: 400px;
+        width: inherit;
+       }
+    </style>
+
   </head>
 
   <body>
@@ -105,6 +112,7 @@
       </form>
       <div class="l8 s12 m12">
         <h1 class="center-align">MAP HERE</h1>
+        <div id="map"></div>
       </div>
 
     </div>
@@ -152,6 +160,43 @@
     </div>
 
   </body>
+
+  <script>
+    function initMap() {
+      navigator.geolocation.getCurrentPosition(position => {
+        const { latitude, longitude } = position.coords;
+        let uluru = { lat: latitude, lng: longitude };
+        let map = new google.maps.Map(document.getElementById('map'), {
+          zoom: 17,
+          center: uluru
+        });
+        var input = document.getElementById("park");
+        input.addEventListener("click", event => {
+          input.placeholder = "Whatever";
+        })
+        var autocomplete = new google.maps.places.Autocomplete(input);
+        autocomplete.bindTo("bound", map);
+        input.placeholder = "";
+        autocomplete.addListener('place_changed', function() {
+          var place = autocomplete.getPlace();
+          if (place.geometry) {
+            const point = place.geometry.location;
+            createMarker(point, map);
+            map.setCenter(point);
+          }
+        })
+      });
+    }
+
+    function createMarker(place, map) {
+      var marker = new google.maps.Marker({
+        map: map,
+        position: place
+      });
+    }
+  </script>
+
+  <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDpzlkHHmo0OJ-LpHIbogL1eXapd3R1N3o&libraries=places&callback=initMap"></script>
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
   <script src="src/js/main.js"></script>
