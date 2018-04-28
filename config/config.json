@@ -1,22 +1,22 @@
 {
   "development": {
-    "username": "DB_USERNAME",
-    "password": "DB_PASSWORD",
-    "database": "APP_development",
+    "username": "cuny",
+    "password": "hackathon",
+    "database": "cunyhackthon",
     "host": "127.0.0.1",
     "dialect": "postgresql"
   },
   "test": {
-    "username": "DB_USERNAME",
-    "password": "DB_PASSWORD",
-    "database": "APP_test",
+    "username": "cuny",
+    "password": "hackathon",
+    "database": "cunyhackathon",
     "host": "127.0.0.1",
     "dialect": "postgresql"
   },
   "production": {
-    "username": "DB_USERNAME",
-    "password": "DB_PASSWORD",
-    "database": "APP_production",
+    "username": "cuny",
+    "password": "hackathon",
+    "database": "cunyhackathon",
     "host": "127.0.0.1",
     "dialect": "postgresql"
   }
