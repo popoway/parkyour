@@ -72,7 +72,8 @@ const PubSub = (function() {
   const api = {
     publish: publish,
     subscribe: subscribe,
-    unsubscribe: unsubscribe,
-    events: events
+    unsubscribe: unsubscribe
   }
+  
+  return api;
 })();
