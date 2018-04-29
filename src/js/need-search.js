@@ -16,7 +16,7 @@ const needSearch = (function() {
   }
 
   function switchView(event) {
-    if (event.target.innerText == "Need") {
+    if (event.target.innerText == "Request") {
       show(needSearchSection);
     } else if (event.target.innerText == "Provide") {
       hide(needSearchSection);

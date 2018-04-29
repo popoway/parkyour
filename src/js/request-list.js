@@ -15,7 +15,7 @@ const RequestList = (function() {
   }
 
   function switchView(event) {
-    if (event.target.innerText == "Need") {
+    if (event.target.innerText == "Request") {
       hide(requestList);
     } else if (event.target.innerText == "Provide") {
       show(requestList);
