@@ -24,6 +24,8 @@
     <meta name="format-detection" content="telephone=no">
     <link rel="apple-touch-icon" sizes="192x192" href="assets/touchicon.png">
 
+    <!-- google text fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:200" rel="stylesheet">
   </head>
 
   <body>
@@ -79,8 +81,10 @@
           <!-- #of ppl -->
           <div class="input-field col l12 m12 s12">
             <i class="material-icons prefix">group</i>
-            <input id="ppl" type="number" class="validate">
-            <label for="ppl"># of people</label>
+            <label for="people"><span>Number of People</span></label><br/>
+            <p class="range-field">
+            <input type="range" id="people" value="5" min="2" max="10"/>
+            </p>
           </div>
 
           <!-- date -->
@@ -99,7 +103,7 @@
 
           <!-- request -->
           <div class="col l12 m12 s12 center-align">
-            <a class="waves-effect waves-light btn-large center-align"> Request</a>
+            <a class="waves-effect waves-light btn-large center-align">Place Request</a>
           </div>
         </div>
       </form>
