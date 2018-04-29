@@ -11,6 +11,7 @@ const RequestList = (function() {
     PubSub.subscribe(["frontPage"], "provideBtnClicked", {callbackFn: show.bind(this, requestList)} );
     // PubSub.subscribe(["navbar"], "navMenuClicked", { callbackFn: swi.bind(this, requestList)});
     PubSub.subscribe(["navbar"], "navMenuClicked", {callbackFn: switchView} );
+    PubSub.subscribe(["navbar"], "navLogoClicked", {callbackFn: hide.bind(this, requestList)} );
   }
 
   function switchView(event) {

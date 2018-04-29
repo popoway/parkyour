@@ -11,6 +11,7 @@ const needSearch = (function() {
   function subscribe() {
     PubSub.subscribe(["frontPage"], "needBtnClicked", {callbackFn: show.bind(this, needSearchSection)});
     PubSub.subscribe(["navbar"], "navMenuClicked", {callbackFn: switchView} );
+    PubSub.subscribe(["navbar"], "navLogoClicked", {callbackFn: hide.bind(this, needSearchSection)} );
     // PubSub.subscribe(["navbar"], "navMenuClicked", { callbackFn: toggle.bind(this, needSearchSection)});
   }
 
