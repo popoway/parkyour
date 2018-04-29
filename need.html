@@ -32,9 +32,8 @@
     <!-- navbar -->
     <div class="navbar-fixed">
       <nav>
-        <div class="nav-wrapper">
-          <a href="#!" class="brand-logo">
-            <img id="logo_pic" src="assets/favicon.png" height="42" width="42"> Parkyour</a>
+        <div class="nav-wrapper grey darken-4">
+          <a href="#!" class="brand-logo"><img src="assets/favicon.png" height="42" width="42">Parkyour</a>
           <ul id="nav-mobile" class="right hide-on-med-and-down">
             <li><a href="#">Need</a></li>
             <li><a href="#">Provide</a></li>
@@ -108,8 +107,7 @@
           </div>
         </div>
       </form>
-      <div class="l8 s12 m12">
-        <h1 class="center-align">MAP HERE</h1>
+      <div class="l8 s12 m12" id="map">
       </div>
 
     </div>
@@ -157,6 +155,43 @@
     </div>
 
   </body>
+
+  <script>
+    function initMap() {
+      navigator.geolocation.getCurrentPosition(position => {
+        const { latitude, longitude } = position.coords;
+        let uluru = { lat: latitude, lng: longitude };
+        let map = new google.maps.Map(document.getElementById('map'), {
+          zoom: 17,
+          center: uluru
+        });
+        var input = document.getElementById("park");
+        input.addEventListener("click", event => {
+          input.placeholder = "Whatever";
+        })
+        var autocomplete = new google.maps.places.Autocomplete(input);
+        autocomplete.bindTo("bound", map);
+        input.placeholder = "";
+        autocomplete.addListener('place_changed', function() {
+          var place = autocomplete.getPlace();
+          if (place.geometry) {
+            const point = place.geometry.location;
+            createMarker(point, map);
+            map.setCenter(point);
+          }
+        })
+      });
+    }
+
+    function createMarker(place, map) {
+      var marker = new google.maps.Marker({
+        map: map,
+        position: place
+      });
+    }
+  </script>
+
+  <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDpzlkHHmo0OJ-LpHIbogL1eXapd3R1N3o&libraries=places&callback=initMap"></script>
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
   <script src="src/js/main.js"></script>
