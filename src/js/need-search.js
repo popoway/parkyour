@@ -1,10 +1,19 @@
 const needSearch = (function() {
   PubSub.subscribe([], "init", {callbackFn: init});
 
-  let needSearchSection;
+  let needSearchSection,
+      datePicker,
+      datePickerInstance,
+      timePicker,
+      timePickerInstance;
+
 
   function init() {
     needSearchSection = document.getElementById("need-search");
+    datePicker = document.querySelector('.datepicker');
+    datePickerInstance = M.Datepicker.init(datePicker);
+    timePicker = document.querySelector('.timepicker');
+    timePickerInstance = M.Timepicker.init(timePicker);
     subscribe();
   }
 
