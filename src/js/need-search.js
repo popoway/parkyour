@@ -6,7 +6,8 @@ const needSearch = (function() {
       datePickerInstance,
       timePicker,
       timePickerInstance,
-      requestForm;
+      requestForm,
+      ulList;
 
   function init() {
     requestForm = document.getElementById("request-form");
@@ -16,6 +17,7 @@ const needSearch = (function() {
     datePickerInstance = M.Datepicker.init(datePicker);
     timePicker = document.querySelector('.timepicker');
     timePickerInstance = M.Timepicker.init(timePicker);
+    ulList = document.getElementById("request-list-items");
     subscribe();
   }
 
@@ -65,6 +67,7 @@ const needSearch = (function() {
     fetch('https://parkyour.herokuapp.com/request', postData)
     .then(data => {
       console.log("sucessssss")
+      getData();      
     })
     .catch(error => {
       console.log("failllll");
@@ -84,6 +87,51 @@ const needSearch = (function() {
   //     xhr.send(JSON.stringify(formData)); 
   //   });
   //}
+
+  function getData() {
+    return new Promise(function(resolve, reject) {
+      let xhr = new XMLHttpRequest();
+      xhr.open("GET", "https://parkyour.herokuapp.com/request");
+      xhr.onload = function () {
+        resolve(xhr.response);
+      };
+      xhr.onerror = function () {
+        reject(xhr.response);
+      };
+      xhr.send(); 
+    });
+  }
+
+  function createItems() {
+    let dataPromise = getData();
+    dataPromise.then(function(listData) {
+      listData = JSON.parse(listData);
+      listData.map(function(item) {
+        let list = document.createElement("li");
+        list.classList.add("collection-item", "avatar");
+        let iElement = document.createElement("i");
+        iElement.classList.add("material-icons", "circle");
+        let spandElement = document.createElement("span");
+        spandElement.classList.add("title");
+        let pElement = document.createElement("p");
+        let aElement = document.createElement("a");
+        aElement.classList.add("secondary-content");
+        let i2Element = document.createElement("i");
+        i2Element.classList.add("material-icons");
+        let p2 = document.createElement("p");
+        list.appendChild(iElement);
+        list.appendChild(spandElement);
+        list.appendChild(pElement);
+        list.appendChild(p2);
+        list.appendChild(aElement);
+        aElement.appendChild(i2Element);
+        spandElement.innerText = item.parkName;
+        pElement.innerText = item.email + " Number of people: " + item.numberOfPeople;
+        p2.innerText = item.type;
+        ulList.appendChild(list);
+      })
+    });
+  }
 
   function show(element) {
     element.classList.remove("hide");
