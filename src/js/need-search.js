@@ -5,7 +5,7 @@ const needSearch = (function() {
       datePicker,
       datePickerInstance,
       timePicker,
-      timePickerInstance;
+      timePickerInstance,
       requestForm;
 
   function init() {
@@ -53,37 +53,37 @@ const needSearch = (function() {
     return formData;
   }
 
-//   function submitFormData(formData) {
-//     let postData = {
-//       method: "POST",
-//       headers: {
-//           'Accept': 'application/json',
-//           'Content-Type': 'application/json'
-//       },
-//       body: formData
-//     };
-//     fetch('https://parkyour.herokuapp.com/request', postData)
-//     .then(function() {
-//       console.log("sucessssss")
-//     })
-//     .catch(error => {
-//       console.log("failllll");
-//       });
-//   }
-
   function submitFormData(formData) {
-    return new Promise(function(resolve, reject) {
-      let xhr = new XMLHttpRequest();
-      xhr.open("POST", "https://parkyour.herokuapp.com/request");
-      xhr.onload = function () {
-        resolve(xhr.response);
-      };
-      xhr.onerror = function () {
-        reject(xhr.response);
-      };
-      xhr.send(JSON.stringify(formData)); 
-    });
+    let postData = {
+      method: "POST",
+      headers: {
+          'Accept': 'application/json',
+          'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(formData)
+    };
+    fetch('https://parkyour.herokuapp.com/request', postData)
+    .then(data => {
+      console.log("sucessssss")
+    })
+    .catch(error => {
+      console.log("failllll");
+      });
   }
+
+  // function submitFormData(formData) {
+  //   return new Promise(function(resolve, reject) {
+  //     let xhr = new XMLHttpRequest();
+  //     xhr.open("POST", "https://parkyour.herokuapp.com/request");
+  //     xhr.onload = function () {
+  //       resolve(xhr.response);
+  //     };
+  //     xhr.onerror = function () {
+  //       reject(xhr.response);
+  //     };
+  //     xhr.send(JSON.stringify(formData)); 
+  //   });
+  //}
 
   function show(element) {
     element.classList.remove("hide");
