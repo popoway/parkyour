@@ -55,12 +55,16 @@ const RequestList = (function() {
         aElement.classList.add("secondary-content");
         let i2Element = document.createElement("i");
         i2Element.classList.add("material-icons");
+        let p2 = document.createElement("p");
         list.appendChild(iElement);
         list.appendChild(spandElement);
         list.appendChild(pElement);
+        list.appendChild(p2);
         list.appendChild(aElement);
         aElement.appendChild(i2Element);
-        spandElement.innerText = item.email;
+        spandElement.innerText = item.parkName;
+        pElement.innerText = item.email + " Number of people: " + item.numberOfPeople;
+        p2.innerText = item.type;
         ulList.appendChild(list);
       })
       
