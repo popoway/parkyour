@@ -5,7 +5,7 @@ const needSearch = (function() {
       datePicker,
       datePickerInstance,
       timePicker,
-      timePickerInstance;
+      timePickerInstance,
       requestForm;
 
   function init() {
