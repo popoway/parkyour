@@ -1,7 +1,7 @@
 const PubSub = (function() {
   let events = {};
 
-  function publish({ path: path = [] } = {}, eventName, ...data) {
+  function publish(path = [], eventName, ...data) {
     if (typeof eventName !== "string") {
       return;
     }
@@ -12,6 +12,8 @@ const PubSub = (function() {
     eventLocation[eventName].forEach(subscription => {
       subscription.callbackFn.apply(subscription.context, data);
     });
+
+    console.log(events);
   }
 
   function createEventMap(path) {
@@ -39,6 +41,7 @@ const PubSub = (function() {
     }
     const subscription = { callbackFn: callbackFn, context: context };
     eventLocation[eventName].push(subscription);
+    console.log(events);
   }
   
   function unsubscribe(path = [], eventName, callbackFn) {
