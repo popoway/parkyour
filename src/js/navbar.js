@@ -9,7 +9,7 @@ const Navbar = (function() {
   }
 
   function subscribe() {
-    PubSub.subscribe(["frontPage"], "provideBtnClicked", {callbackFn: hide.bind(this, navMenu)} );
+    
   }
 
   function addNavmenuListener() {
