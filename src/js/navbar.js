@@ -1,9 +1,12 @@
 const Navbar = (function() {
   PubSub.subscribe([], "init", {callbackFn: init});
 
-  let navMenu;
+  let navMenu,
+      navLogo;
+  
   function init() {
     navMenu = document.getElementById("nav-mobile");
+    navLogo = document.querySelector(".brand-logo");
     addNavmenuListener();
     subscribe();
   }
@@ -14,6 +17,7 @@ const Navbar = (function() {
 
   function addNavmenuListener() {
     navMenu.addEventListener("click", PubSub.publish.bind(PubSub, ["navbar"], "navMenuClicked"));
+    navLogo.addEventListener("click", PubSub.publish.bind(PubSub, ["navbar"], "navLogoClicked"));
   }
 
   function hide(element) {
