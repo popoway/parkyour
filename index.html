@@ -221,8 +221,10 @@
         <!-- #of ppl -->
         <div class="input-field col l12 m12 s12">
           <i class="material-icons prefix">group</i>
-          <input id="ppl" type="number" class="validate">
-          <label for="ppl"># of people</label>
+          <label for="people"><span>Number of People</span></label><br/>
+          <p class="range-field">
+          <input type="range" id="people" value="5" min="2" max="10"/>
+          </p>
         </div>
 
         <!-- date -->
@@ -241,12 +243,11 @@
 
         <!-- request -->
         <div class="col l12 m12 s12 center-align">
-          <a class="waves-effect waves-light btn-large center-align"> Request</a>
+          <a class="waves-effect waves-light btn-large center-align">Place Request</a>
         </div>
       </div>
     </form>
-    <div class="l8 s12 m12">
-      <h1 class="center-align">MAP HERE</h1>
+    <div class="l8 s12 m12" id="map">
     </div>
 
   </div>
@@ -302,7 +303,41 @@
         <li><a class="btn-floating blue"><i class="material-icons">attach_file</i></a></li>
       </ul>
     </div>
-
+    <script>
+      function initMap() {
+        navigator.geolocation.getCurrentPosition(position => {
+          const { latitude, longitude } = position.coords;
+          let uluru = { lat: latitude, lng: longitude };
+          let map = new google.maps.Map(document.getElementById('map'), {
+            zoom: 17,
+            center: uluru
+          });
+          var input = document.getElementById("park");
+          input.addEventListener("click", event => {
+            input.placeholder = "Whatever";
+          })
+          var autocomplete = new google.maps.places.Autocomplete(input);
+          autocomplete.bindTo("bound", map);
+          input.placeholder = "";
+          autocomplete.addListener('place_changed', function() {
+            var place = autocomplete.getPlace();
+            if (place.geometry) {
+              const point = place.geometry.location;
+              createMarker(point, map);
+              map.setCenter(point);
+            }
+          })
+        });
+      }
+  
+      function createMarker(place, map) {
+        var marker = new google.maps.Marker({
+          map: map,
+          position: place
+        });
+      }
+    </script>
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDpzlkHHmo0OJ-LpHIbogL1eXapd3R1N3o&libraries=places&callback=initMap"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
     <script src="src/js/pubsub.js"></script>
     <script src="src/js/front-page.js"></script>
