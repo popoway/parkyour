@@ -188,33 +188,33 @@
       <label><h3>Date</h3></label>
       <input type="date" class="datepicker">
     </div> -->
-    <form class="col l4 s12">
+    <form id="request-form" class="col l4 s12">
       <div class="row">
         <!-- name -->
         <div class="input-field col l12 m12 s12">
           <i class="material-icons prefix">account_circle</i>
-          <input id="name" type="text" class="validate">
+          <input id="name" type="text" class="validate" name="name">
           <label for="name">Name</label>
         </div>
 
         <!-- email -->
         <div class="input-field col l12 m12 s12">
           <i class="material-icons prefix">email</i>
-          <input id="email" type="text" class="validate">
+          <input id="email" type="text" class="validate" name="email">
           <label for="email">Email</label>
         </div>
 
         <!-- park -->
         <div class="input-field col l12 m12 s12">
           <i class="material-icons prefix">directions_run</i>
-          <input id="park" type="text" class="validate">
+          <input id="park" type="text" class="validate" name="parkName">
           <label for="park">Park</label>
         </div>
 
         <!-- area -->
         <div class="input-field col l12 m12 s12">
           <i class="material-icons prefix">panorama_fish_eye</i>
-          <input id="sport" type="text" class="validate">
+          <input id="sport" type="text" class="validate" name="type">
           <label for="sport">Area</label>
         </div>
 
@@ -223,27 +223,27 @@
           <i class="material-icons prefix">group</i>
           <label for="people"><span>Number of People</span></label><br/>
           <p class="range-field">
-          <input type="range" id="people" value="5" min="2" max="10"/>
+          <input type="range" id="people" value="5" min="2" max="10" name="numberOfPeople" >
           </p>
         </div>
 
         <!-- date -->
         <div class="input-field col l12 m12 s12">
           <i class="material-icons prefix">date_range</i>
-          <input id="date" type="date" class="validate">
+          <input id="date" type="date" class="validate" name="date">
           <label for="date">Date</label>
         </div>
 
         <!-- time -->
         <div class="input-field col l12 m12 s12">
           <i class="material-icons prefix">access_time</i>
-          <input id="time" type="time" class="validate">
+          <input id="time" type="time" class="validate" name="time">
           <label for="time">Time</label>
         </div>
 
         <!-- request -->
         <div class="col l12 m12 s12 center-align">
-          <a class="waves-effect waves-light btn-large center-align">Place Request</a>
+          <button class="waves-effect waves-light btn-large center-align" type="submit">Place Request</button>
         </div>
       </div>
     </form>
