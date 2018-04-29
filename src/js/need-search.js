@@ -67,6 +67,7 @@ const needSearch = (function() {
     fetch('https://parkyour.herokuapp.com/request', postData)
     .then(data => {
       console.log("sucessssss")
+      ulList.innerHtml = "";
       getData();      
     })
     .catch(error => {
