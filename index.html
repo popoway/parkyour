@@ -230,14 +230,14 @@
         <!-- date -->
         <div class="input-field col l12 m12 s12">
           <i class="material-icons prefix">date_range</i>
-          <input id="date" type="date" class="validate" name="date">
+          <input id="date" type="date" class="validate datepicker " name="date">
           <label for="date">Date</label>
         </div>
 
         <!-- time -->
         <div class="input-field col l12 m12 s12">
           <i class="material-icons prefix">access_time</i>
-          <input id="time" type="time" class="validate" name="time">
+          <input id="time" type="time" class="validate timepicker" name="time">
           <label for="time">Time</label>
         </div>
 
@@ -329,7 +329,7 @@
           })
         });
       }
-  
+
       function createMarker(place, map) {
         var marker = new google.maps.Marker({
           map: map,

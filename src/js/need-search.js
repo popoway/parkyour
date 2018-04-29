@@ -2,19 +2,20 @@ const needSearch = (function() {
   PubSub.subscribe([], "init", {callbackFn: init});
 
   let needSearchSection,
-      emailInput,
-      nameInput,
-      addressInput,
-      areaInput,
-      numberOfPeopleInput,
-      dateInput,
-      timeInput,
+      datePicker,
+      datePickerInstance,
+      timePicker,
+      timePickerInstance;
       requestForm;
 
   function init() {
-    needSearchSection = document.getElementById("need-search");
     requestForm = document.getElementById("request-form");
     addRequestFormListener();
+    needSearchSection = document.getElementById("need-search");
+    datePicker = document.querySelector('.datepicker');
+    datePickerInstance = M.Datepicker.init(datePicker);
+    timePicker = document.querySelector('.timepicker');
+    timePickerInstance = M.Timepicker.init(timePicker);
     subscribe();
   }
 
