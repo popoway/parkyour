@@ -37,6 +37,7 @@ const needSearch = (function() {
 
   function addRequestFormListener() {
     requestForm.addEventListener("submit", event => {
+      event.preventDefault();
      const formData = getFormData(event);
      submitFormData(formData);
     });
@@ -66,9 +67,10 @@ const needSearch = (function() {
     };
     fetch('https://parkyour.herokuapp.com/request', postData)
     .then(data => {
+      console.log(data.statusText, data.status);
       console.log("sucessssss")
-      ulList.innerHtml = "";
-      getData();      
+      ulList.innerHTML = "";
+      createItems();   
     })
     .catch(error => {
       console.log("failllll");
